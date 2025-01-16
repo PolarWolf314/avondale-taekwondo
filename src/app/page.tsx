@@ -63,6 +63,11 @@ export default function Home() {
           </p>
         </CardContent>
       </Card>
+
+      <div>
+        <Button>Learn more about us</Button>
+        <Button>Contact us</Button>
+      </div>
     </>
   );
 }

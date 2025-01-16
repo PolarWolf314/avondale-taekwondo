@@ -41,11 +41,12 @@ export default function Home() {
         </CardHeader>
         <CardContent>
           <p>
-            Explore the fundamental techniques of Taekwon-Do, such as kicks,
-            punches, and blocks. Learn the proper forms and stances to execute
-            powerful and precise movements. Whether you're a beginner or an
-            experienced practitioner, our expert instructors will guide you on
-            the path to mastery.
+            Taekwon-Do offers a multitude of benefits beyond physical fitness.
+            Experience improved focus, discipline, and self-confidence as you
+            progress through your training. Enhance your mental and emotional
+            well-being while developing a strong and resilient spirit. Discover
+            how Taekwon-Do can positively impact your life on and off the
+            training mat.
           </p>
         </CardContent>
       </Card>
@@ -55,11 +56,13 @@ export default function Home() {
         </CardHeader>
         <CardContent>
           <p>
-            Explore the fundamental techniques of Taekwon-Do, such as kicks,
-            punches, and blocks. Learn the proper forms and stances to execute
-            powerful and precise movements. Whether you're a beginner or an
-            experienced practitioner, our expert instructors will guide you on
-            the path to mastery.
+            Immerse yourself in the essence of Taekwon-Do—a martial art deeply
+            rooted in tradition, discipline, and respect. Experience the ancient
+            wisdom passed down through generations as you train with our
+            passionate instructors. Discover the profound values of courtesy,
+            integrity, perseverance, self control, and indomitable spirit.
+            Foster a personal growth and a sense of honour within our Taekwon-Do
+            community.
           </p>
         </CardContent>
       </Card>

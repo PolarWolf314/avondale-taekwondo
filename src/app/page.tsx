@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -14,7 +13,9 @@ export default function Home() {
       <h1>Taekwon-Do is an ART</h1>
       <Card>
         <CardContent>
-          <p>Do you want to train your mind and body?</p>
+          <p className="font-header tracking-tighter">
+            Do you want to train your mind and body?
+          </p>
         </CardContent>
         <CardFooter>
           <Button>Join Us</Button>

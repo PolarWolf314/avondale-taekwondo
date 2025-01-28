@@ -27,7 +27,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -53,10 +53,17 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 @layer base {
+  @font-face {
+    font-family: "InnovatorGroteskVF";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/InnovatorGroteskVF-VF.woff2) format("woff2");
+  }
   * {
     @apply border-border;
   }

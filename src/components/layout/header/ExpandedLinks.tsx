@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 const ExpandedLinks = () => {
@@ -6,22 +7,22 @@ const ExpandedLinks = () => {
     <ul className="flex flex-row gap-0.5 md:gap-3">
       <li>
         <Button variant="link">
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
         </Button>
       </li>
       <li>
         <Button variant="link">
-          <a href="/about">About</a>
+          <Link href="/about">About</Link>
         </Button>
       </li>
       <li>
         <Button variant="link">
-          <a href="/pricing">Pricing and FAQ</a>
+          <Link href="/pricing">Pricing and FAQ</Link>
         </Button>
       </li>
       <li>
         <Button>
-          <a href="/join">Join</a>
+          <Link href="/join">Join</Link>
         </Button>
       </li>
     </ul>

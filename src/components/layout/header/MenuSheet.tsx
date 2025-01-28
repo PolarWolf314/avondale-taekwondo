@@ -10,6 +10,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import Logo from "./Logo";
 
 const MenuSheet = () => {
   return (
@@ -19,8 +20,8 @@ const MenuSheet = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className="font-display font-bold tracking-tight text-xl pt-8">
-            Avondale Taekwon-Do
+          <SheetTitle className="flex items-center justify-center pt-10">
+            <Logo />
           </SheetTitle>
         </SheetHeader>
         <SheetFooter className="gap-4 pt-10">

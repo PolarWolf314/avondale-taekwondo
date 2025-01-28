@@ -27,22 +27,22 @@ const MenuSheet = () => {
         </SheetHeader>
         <SheetFooter className="gap-4 pt-10">
           <SheetClose asChild>
-            <Button className="mx-24">
+            <Button asChild className="mx-24">
               <Link href="/join">Join</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
-            <Button variant="link">
+            <Button asChild variant="link">
               <Link href="/pricing">Pricing and FAQ</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
-            <Button variant="link">
+            <Button asChild variant="link">
               <Link href="/about">About</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
-            <Button variant="link">
+            <Button asChild variant="link">
               <Link href="/">Home</Link>
             </Button>
           </SheetClose>

@@ -3,7 +3,7 @@ import React from "react";
 const Logo = () => {
   return (
     <>
-      <a className="flex flex-row gap-2 p-4 items-center w-fit" href="/">
+      <a className="flex flex-row gap-2 items-center w-fit" href="/">
         <span className="font-display font-bold tracking-tight text-xl">
           Avondale Taekwon-Do
         </span>

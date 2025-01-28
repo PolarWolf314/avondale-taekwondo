@@ -16,9 +16,7 @@ const MenuSheet = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">
-          <Menu />
-        </Button>
+        <Menu />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>

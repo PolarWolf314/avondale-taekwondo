@@ -11,6 +11,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["InnovatorGroteskVF"],
+        display: ["PP Writer Display"],
+        header: ["PP Writer Text"],
       },
       colors: {
         background: "hsl(var(--background))",

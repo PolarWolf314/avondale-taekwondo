@@ -64,6 +64,46 @@
     font-display: swap;
     src: url(../fonts/InnovatorGroteskVF-VF.woff2) format("woff2");
   }
+
+  @font-face {
+    font-family: "PP Writer Text";
+    font-style: normal;
+    font-weight: 400; /* Regular */
+    font-display: swap;
+    src: url(../fonts/PPWriter-RegularText.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "PP Writer Display";
+    font-style: bold;
+    font-weight: 700; /* Bold */
+    font-display: swap;
+    src: url(../fonts/PPWriter-Bold.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "PP Writer Text";
+    font-style: bold;
+    font-weight: 700; /* Bold Text */
+    font-display: swap;
+    src: url(../fonts/PPWriter-BoldText.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "PP Writer Display";
+    font-style: italic;
+    font-weight: 700; /* Bold Italic */
+    font-display: swap;
+    src: url(../fonts/PPWriter-BoldItalic.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "PP Writer Display";
+    font-style: thin;
+    font-weight: 100; /* Thin */
+    font-display: swap;
+    src: url(../fonts/PPWriter-Thin.woff2) format("woff2");
+  }
   * {
     @apply border-border;
   }

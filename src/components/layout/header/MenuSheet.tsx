@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Logo from "./Logo";
+import Link from "next/link";
 
 const MenuSheet = () => {
   return (
@@ -26,23 +27,23 @@ const MenuSheet = () => {
         </SheetHeader>
         <SheetFooter className="gap-4 pt-10">
           <SheetClose asChild>
-            <Button className="mx-24">
-              <a href="/join">Join</a>
+            <Button asChild className="mx-24">
+              <Link href="/join">Join</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
-            <Button variant="link">
-              <a href="/pricing">Pricing and FAQ</a>
+            <Button asChild variant="link">
+              <Link href="/pricing">Pricing and FAQ</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
-            <Button variant="link">
-              <a href="/about">About</a>
+            <Button asChild variant="link">
+              <Link href="/about">About</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
-            <Button variant="link">
-              <a href="/">Home</a>
+            <Button asChild variant="link">
+              <Link href="/">Home</Link>
             </Button>
           </SheetClose>
         </SheetFooter>

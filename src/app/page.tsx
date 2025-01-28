@@ -30,7 +30,7 @@ export default function Home() {
           <p>
             Explore the fundamental techniques of Taekwon-Do, such as kicks,
             punches, and blocks. Learn the proper forms and stances to execute
-            powerful and precise movements. Whether you're a beginner or an
+            powerful and precise movements. Whether you&apos;re a beginner or an
             experienced practitioner, our expert instructors will guide you on
             the path to mastery.
           </p>

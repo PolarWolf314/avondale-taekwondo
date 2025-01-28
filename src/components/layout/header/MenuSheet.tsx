@@ -4,7 +4,6 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
@@ -20,18 +19,30 @@ const MenuSheet = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
+          <SheetTitle className="font-display font-bold tracking-tight text-xl pt-8">
+            Avondale Taekwon-Do
+          </SheetTitle>
         </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4"></div>
-          <div className="grid grid-cols-4 items-center gap-4"></div>
-        </div>
-        <SheetFooter>
+        <SheetFooter className="gap-4 pt-10">
           <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
+            <Button className="mx-24">
+              <a href="/join">Join</a>
+            </Button>
+          </SheetClose>
+          <SheetClose asChild>
+            <Button variant="link">
+              <a href="/pricing">Pricing and FAQ</a>
+            </Button>
+          </SheetClose>
+          <SheetClose asChild>
+            <Button variant="link">
+              <a href="/about">About</a>
+            </Button>
+          </SheetClose>
+          <SheetClose asChild>
+            <Button variant="link">
+              <a href="/">Home</a>
+            </Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

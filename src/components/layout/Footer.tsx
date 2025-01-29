@@ -1,12 +1,24 @@
 import { Facebook } from "lucide-react";
 import React from "react";
 import FooterLinks from "./footer/FooterLinks";
+import Logo from "./header/Logo";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer>
-      THIS IS THE FOOTER
-      <div>Logo, contact details, and address</div>
+    <footer className="mx-6 my-8">
+      <section className="flex flex-col gap-4">
+        <Logo />
+        <p>instructor@avondaletkd.co.nz</p>
+        <p>+64 21 164 6158</p>
+        <Link href="https://maps.app.goo.gl/yD6BswpVuXgaqF2w7">
+          Avondale Primary School
+          <br />
+          Crayford Street West, Avondale
+          <br />
+          Auckland 1026, NZ
+        </Link>
+      </section>
       <FooterLinks
         title="Club"
         links={[

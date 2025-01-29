@@ -32,7 +32,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => {
   ));
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="font-display text-xl pb-4">{title}</h3>
+      <h3 className="text-lg font-bold">{title}</h3>
       <>{renderedLinks}</>
     </div>
   );

@@ -6,61 +6,85 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="mx-6 my-8">
-      <section className="flex flex-col gap-4">
-        <Logo />
-        <p>instructor@avondaletkd.co.nz</p>
-        <p>+64 21 164 6158</p>
-        <Link href="https://maps.app.goo.gl/yD6BswpVuXgaqF2w7">
-          Avondale Primary School
-          <br />
-          Crayford Street West, Avondale
-          <br />
-          Auckland 1026, NZ
-        </Link>
+    <footer className="px-6 lg:px-24 py-8 bg-gray-200">
+      <section className="flex flex-col md:flex-row md:justify-between md:pb-4">
+        <section className="flex flex-col gap-4">
+          <Logo />
+          <p className="text-sm">instructor@avondaletkd.co.nz</p>
+          <p className="text-sm">+64 21 164 6158</p>
+          <Link
+            className="text-sm"
+            href="https://maps.app.goo.gl/yD6BswpVuXgaqF2w7"
+          >
+            Avondale Primary School
+            <br />
+            Crayford Street West, Avondale
+            <br />
+            Auckland 1026, NZ
+          </Link>
+          <Link
+            className="flex flex-row items-center gap-4"
+            href="https://www.facebook.com/AvondaleTKD"
+          >
+            <div className="text-sm font-semibold">Follow us</div>
+            <span>
+              <Facebook className="h-8 w-8" />
+            </span>
+          </Link>
+        </section>
+
+        <section className="flex flex-col sm:flex-row gap-4 sm:gap-16 md:gap-10 lg:gap-20 xl:gap-24 py-8">
+          <FooterLinks
+            title="Club"
+            links={[
+              { name: "Home", url: "/" },
+              { name: "About Us", url: "/about" },
+              { name: "Pricing and FAQ", url: "/pricing" },
+              { name: "Contact Us", url: "/join" },
+            ]}
+          />
+          <FooterLinks
+            title="International TKD"
+            links={[
+              { name: "Members", url: "https://members.itkd.co.nz/" },
+              { name: "News", url: "https://members.itkd.co.nz/news/" },
+              { name: "Events", url: "https://members.itkd.co.nz/events/" },
+              {
+                name: "Handbook",
+                url: "https://tigertkd.co.nz/wp-content/uploads/2020/06/Technqiues-Handbook-2017.pdf",
+              },
+            ]}
+          />
+          <FooterLinks
+            title="Legal and Policy"
+            links={[
+              { name: "Privacy Policy", url: "/privacy-policy" },
+              {
+                name: "Terms and Conditions",
+                url: "https://members.itkd.co.nz/terms.php",
+              },
+              {
+                name: "Code of Conduct",
+                url: "code-of-conduct",
+              },
+            ]}
+          />
+        </section>
       </section>
-      <FooterLinks
-        title="Club"
-        links={[
-          { name: "Home", url: "/" },
-          { name: "About Us", url: "/about" },
-          { name: "Pricing and FAQ", url: "/pricing" },
-          { name: "Contact Us", url: "/join" },
-        ]}
-      />
-      <FooterLinks
-        title="International TKD"
-        links={[
-          { name: "Members", url: "https://members.itkd.co.nz/" },
-          { name: "News", url: "https://members.itkd.co.nz/news/" },
-          { name: "Events", url: "https://members.itkd.co.nz/events/" },
-          {
-            name: "Handbook",
-            url: "https://tigertkd.co.nz/wp-content/uploads/2020/06/Technqiues-Handbook-2017.pdf",
-          },
-        ]}
-      />
-      <FooterLinks
-        title="Legal and Policy"
-        links={[
-          { name: "Privacy Policy", url: "/privacy-policy" },
-          {
-            name: "Terms and Conditions",
-            url: "https://members.itkd.co.nz/terms.php",
-          },
-          {
-            name: "Code of Conduct",
-            url: "code-of-conduct",
-          },
-        ]}
-      />
-      <hr />
-      <div>
-        &copy; Avondale Taekwon-Do {new Date().getFullYear()}. All rights
-        reserved. Designed and created by Aaron Guo. Check out my GitHub for
-        more of my work!
-      </div>
-      <Facebook />
+
+      <section className="flex flex-col md:flex-row md:justify-between gap-2 text-gray-700 border-t-2 border-gray-400 pt-6">
+        <p className="text-sm">
+          &copy; Avondale Taekwon-Do {new Date().getFullYear()}. All rights
+          reserved.
+        </p>
+        <p className="text-sm">
+          Designed and created by Aaron Guo ❤️ Check out my{" "}
+          <span className="underline">
+            <Link href="https://github.com/PolarWolf314">GitHub</Link>
+          </span>{" "}
+          for more of my work!
+        </p>
+      </section>
     </footer>
   );
 };

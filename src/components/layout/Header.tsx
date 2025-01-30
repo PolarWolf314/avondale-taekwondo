@@ -6,7 +6,7 @@ import ExpandedLinks from "./header/ExpandedLinks";
 
 const Header = () => {
   return (
-    <header className="bg-gray-200 h-18">
+    <header className="bg-gray-200">
       <nav className="flex flex-row justify-between items-center py-4 px-6">
         <Logo />
         <div className="block sm:hidden">

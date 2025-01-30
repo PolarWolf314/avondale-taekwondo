@@ -4,7 +4,7 @@ import React from "react";
 
 const ExpandedLinks = () => {
   return (
-    <ul className="flex flex-row gap-0.5 md:gap-3">
+    <ul className="flex flex-row md:gap-3">
       <li>
         <Button variant="link">
           <Link href="/">Home</Link>
@@ -17,12 +17,12 @@ const ExpandedLinks = () => {
       </li>
       <li>
         <Button variant="link">
-          <Link href="/pricing">Pricing and FAQ</Link>
+          <Link href="/pricing">Pricing & FAQ</Link>
         </Button>
       </li>
       <li>
         <Button>
-          <Link href="/join">Join</Link>
+          <Link href="/join">Enquire</Link>
         </Button>
       </li>
     </ul>

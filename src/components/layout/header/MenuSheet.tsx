@@ -28,7 +28,7 @@ const MenuSheet = () => {
         <SheetFooter className="gap-4 pt-10">
           <SheetClose asChild>
             <Button asChild className="mx-24">
-              <Link href="/join">Join</Link>
+              <Link href="/join">Enquire</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>

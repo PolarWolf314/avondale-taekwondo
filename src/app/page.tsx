@@ -1,3 +1,4 @@
+import { Hero } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,7 +11,7 @@ import {
 export default function Home() {
   return (
     <>
-      <h1>Taekwon-Do is an ART</h1>
+      <Hero />
       <Card>
         <CardContent>
           <p className="font-header tracking-tighter">

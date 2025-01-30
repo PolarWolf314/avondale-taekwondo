@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
 const images = [
   "/assets/blitz.jpg",
   "/assets/double_front_snap.jpg",
@@ -37,6 +40,18 @@ const Hero = () => {
           <span className="relative text-white font-bold italic">ART</span>
         </span>
       </h1>
+      <div className="absolute bottom-0 w-96 md:w-full md:max-w-xl lg:max-w-2xl left-1/2 transform -translate-x-1/2 translate-y-1/2">
+        <Card className="rounded-none mx-3 py-3">
+          <CardContent className="pt-4 pb-3">
+            <p className="font-header text-center tracking-tighter text-gray-600 md:text-xl lg:2xl">
+              Do you want to train your body and mind?
+            </p>
+          </CardContent>
+          <CardFooter className="flex flex-col content-center">
+            <Button className="px-6 text-xs md:text-sm">Enquire Now</Button>
+          </CardFooter>
+        </Card>
+      </div>
     </section>
   );
 };

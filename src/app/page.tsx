@@ -1,28 +1,13 @@
+import { Hero } from "@/components/layout";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
   return (
     <>
-      <h1>Taekwon-Do is an ART</h1>
-      <Card>
-        <CardContent>
-          <p className="font-header tracking-tighter">
-            Do you want to train your mind and body?
-          </p>
-        </CardContent>
-        <CardFooter>
-          <Button>Join Us</Button>
-        </CardFooter>
-      </Card>
+      <Hero />
 
-      <Card>
+      <Card className="mt-32">
         <CardHeader>
           <CardTitle>Discover the art of Taekwon-Do</CardTitle>
         </CardHeader>

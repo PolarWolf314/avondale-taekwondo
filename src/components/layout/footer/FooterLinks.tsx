@@ -14,6 +14,7 @@ import Link from "next/link";
 interface Link {
   name: string;
   url: string;
+  external: boolean;
 }
 
 interface FooterLinksProps {
@@ -26,7 +27,13 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => {
    * Maps over the links array and renders each link as a nextjs Link.
    */
   const renderedLinks = links.map((link, index) => (
-    <Link key={index} href={link.url} className="text-sm">
+    <Link
+      key={index}
+      href={link.url}
+      target={link.external ? "_blank" : undefined}
+      rel={link.external ? "noopener noreferrer" : undefined}
+      className="text-sm"
+    >
       {link.name}
     </Link>
   ));

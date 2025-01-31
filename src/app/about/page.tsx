@@ -16,7 +16,12 @@ export default function About() {
             We are a local school of Taekwon-Do based in Avondale, Auckland, and
             we are affiliated with the{" "}
             <span>
-              <Link className="underline" href="https://members.itkd.co.nz">
+              <Link
+                className="underline"
+                href="https://members.itkd.co.nz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 International Taekwon-Do Foundation of New Zealand
               </Link>
             </span>
@@ -31,6 +36,8 @@ export default function About() {
               <Link
                 className="underline"
                 href="https://tearaway.co.nz/talent-taekwondo-bianca-koper/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 The first New Zealander to come home with the under 18 World
                 Champion in Sparring title

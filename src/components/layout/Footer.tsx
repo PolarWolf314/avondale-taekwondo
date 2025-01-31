@@ -15,6 +15,8 @@ const Footer = () => {
           <Link
             className="text-sm"
             href="https://maps.app.goo.gl/yD6BswpVuXgaqF2w7"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Avondale Primary School
             <br />
@@ -25,6 +27,8 @@ const Footer = () => {
           <Link
             className="flex flex-row items-center gap-4"
             href="https://www.facebook.com/AvondaleTKD"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <div className="text-sm font-semibold">Follow us</div>
             <span>
@@ -37,35 +41,54 @@ const Footer = () => {
           <FooterLinks
             title="Club"
             links={[
-              { name: "Home", url: "/" },
-              { name: "About Us", url: "/about" },
-              { name: "Pricing and FAQ", url: "/pricing" },
-              { name: "Contact Us", url: "/join" },
+              { name: "Home", url: "/", external: false },
+              { name: "About Us", url: "/about", external: false },
+              { name: "Pricing and FAQ", url: "/pricing", external: false },
+              { name: "Contact Us", url: "/join", external: false },
             ]}
           />
           <FooterLinks
             title="International TKD"
             links={[
-              { name: "Members", url: "https://members.itkd.co.nz/" },
-              { name: "News", url: "https://members.itkd.co.nz/news/" },
-              { name: "Events", url: "https://members.itkd.co.nz/events/" },
+              {
+                name: "Members",
+                url: "https://members.itkd.co.nz/",
+                external: true,
+              },
+              {
+                name: "News",
+                url: "https://members.itkd.co.nz/news/",
+                external: true,
+              },
+              {
+                name: "Events",
+                url: "https://members.itkd.co.nz/events/",
+                external: true,
+              },
               {
                 name: "Handbook",
                 url: "https://tigertkd.co.nz/wp-content/uploads/2020/06/Technqiues-Handbook-2017.pdf",
+                external: true,
               },
             ]}
           />
           <FooterLinks
             title="Legal and Policy"
             links={[
-              { name: "Privacy Policy", url: "/privacy-policy" },
+              {
+                name: "Privacy Policy",
+                url: "/privacy-policy",
+                external: false,
+              },
               {
                 name: "Terms and Conditions",
                 url: "https://members.itkd.co.nz/terms.php",
+                external: true,
               },
               {
                 name: "Code of Conduct",
                 url: "code-of-conduct",
+                external: false,
               },
             ]}
           />

@@ -24,7 +24,7 @@ export default function Home() {
               still stand by having everyone in the family train together.
               <br />
               <br />
-              When you put on the uniform, you're not just a student of
+              When you put on the uniform, you&apos;re not just a student of
               Taekwon-Do. You're part of a{" "}
               <span className="italic">community</span>.
             </p>
@@ -61,8 +61,8 @@ export default function Home() {
               keeps us honest in our actions, perseverance drives us to push
               through challenges, self-control strengthens our discipline, and
               indomitable spirit empowers us to stand firm in the face of
-              adversity. At Avondale Taekwon-Do, we don't just practice martial
-              arts — we build character.
+              adversity. At Avondale Taekwon-Do, we don&apos;t just practice
+              martial arts — we build character.
             </p>
           </CardContent>
         </Card>

@@ -1,6 +1,7 @@
 import { Hero } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -61,10 +62,14 @@ export default function Home() {
         </Card>
       </section>
 
-      <div>
-        <Button>Learn more about us</Button>
-        <Button>Contact us</Button>
-      </div>
+      <section className="flex flex-row gap-4 sm:gap-16 md:gap-24 lg:gap-32 justify-center my-10 md:my-16 lg:my-24">
+        <Button className="text-md p-6 lg:p-12">
+          <Link href="/about">Learn more about us</Link>
+        </Button>
+        <Button className="text-md p-6 lg:p-12 hover:bg-purple-500">
+          <Link href="/join">Enquire now</Link>
+        </Button>
+      </section>
     </>
   );
 }

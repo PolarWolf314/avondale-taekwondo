@@ -62,7 +62,9 @@ export default function About() {
             become a student of Taekwon-Do, and a member of our{" "}
             <span className="italic">community</span>.
           </p>
-          <Button>Book your free trial now</Button>
+          <Button className="mb-2">
+            <Link href="/join">Book your free trial now</Link>
+          </Button>
         </div>
       </section>
       <div className="relative hidden lg:block">

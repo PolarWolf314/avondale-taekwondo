@@ -25,7 +25,7 @@ export default function Home() {
               <br />
               <br />
               When you put on the uniform, you&apos;re not just a student of
-              Taekwon-Do. You're part of a{" "}
+              Taekwon-Do. You&apos;re part of a{" "}
               <span className="italic">community</span>.
             </p>
           </CardContent>

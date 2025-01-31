@@ -42,8 +42,8 @@ export default function Home() {
               than ever. At Avondale Taekwon-Do, we teach practical self-defense
               techniques that equip you with the confidence to handle real-life
               situations. Beyond physical skills, we emphasise awareness,
-              de-escalation, and mental resilience—helping you stay safe in any
-              environment.
+              de-escalation, and mental resilience — helping you stay safe in
+              any environment.
             </p>
           </CardContent>
         </Card>

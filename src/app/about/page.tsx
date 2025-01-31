@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <>
-      <section>
+    <div className="lg:grid lg:grid-cols-2">
+      <section className="max-w-2xl lg:max-w-3xl">
         <div className="p-12 pb-0 flex flex-col gap-10">
           <h1 className="font-header font-bold text-3xl tracking-tighter">
             Who are we?
@@ -65,7 +65,14 @@ export default function About() {
           <Button>Book your free trial now</Button>
         </div>
       </section>
-      <Image />
-    </>
+      <div className="relative hidden lg:block">
+        <Image
+          src="/assets/double_front_snap_2.jpg"
+          fill
+          alt="Images of Avondale Taekwon-Do in action"
+          className="object-cover"
+        />
+      </div>
+    </div>
   );
 }

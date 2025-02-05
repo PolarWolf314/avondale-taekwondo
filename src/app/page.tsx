@@ -9,9 +9,9 @@ export default function Home() {
       <Hero />
 
       <section className="mt-32 grid flex-col w-screen gap-8 lg:gap-12 px-8 sm:px-16 lg:px-32">
-        <Card className="md:w-96 lg:w-[38rem] place-self-start px-3 py-2 rounded-none">
+        <Card className="md:w-96 lg:w-[40rem] place-self-start px-3 py-2 rounded-none">
           <CardHeader>
-            <CardTitle className="text-lg">
+            <CardTitle className="text-lg font-header font-bold leading-tight tracking-tighter">
               Come for the Taekwon-Do, stay for the{" "}
               <span className="italic">community</span>
             </CardTitle>
@@ -30,9 +30,9 @@ export default function Home() {
             </p>
           </CardContent>
         </Card>
-        <Card className="md:w-96 lg:w-[38rem] place-self-end px-3 py-2 rounded-none">
+        <Card className="md:w-96 lg:w-[40rem] place-self-end px-3 py-2 rounded-none">
           <CardHeader>
-            <CardTitle className="text-lg">
+            <CardTitle className="text-lg font-header font-bold leading-tight tracking-tighter">
               Self defense in the modern age
             </CardTitle>
           </CardHeader>
@@ -47,9 +47,9 @@ export default function Home() {
             </p>
           </CardContent>
         </Card>
-        <Card className="md:w-96 lg:w-[38rem] place-self-start px-3 py-2 rounded-none">
+        <Card className="md:w-96 lg:w-[40rem] place-self-start px-3 py-2 rounded-none">
           <CardHeader>
-            <CardTitle className="text-lg">
+            <CardTitle className="text-lg font-header font-bold leading-tight tracking-tighter">
               Courtesy, integrity, perseverance, self-control, indomitable
               spirit
             </CardTitle>

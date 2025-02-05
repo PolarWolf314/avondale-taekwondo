@@ -33,14 +33,7 @@ const CardTitle = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "font-header font-bold leading-none tracking-tighter",
-      className,
-    )}
-    {...props}
-  />
+  <div ref={ref} className={cn("", className)} {...props} />
 ));
 CardTitle.displayName = "CardTitle";
 

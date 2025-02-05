@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex-grow">
       <Hero />
 
       <section className="mt-32 grid flex-col w-screen gap-8 lg:gap-12 px-8 sm:px-16 lg:px-32">
@@ -76,6 +76,6 @@ export default function Home() {
           <Link href="/join">Enquire now</Link>
         </Button>
       </section>
-    </>
+    </div>
   );
 }

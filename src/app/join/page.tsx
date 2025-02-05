@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>This is the join us page</div>;
+  return <div className="flex-grow">This is the join us page</div>;
 }

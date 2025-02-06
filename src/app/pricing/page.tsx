@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -28,7 +29,7 @@ export default function Home() {
           Taekwon-Do has got you covered.
         </p>
       </div>
-      <div>
+      <div className="flex flex-col">
         <Card className="rounded-none mx-6">
           <CardHeader>
             <CardTitle className="text-lg font-bold">Casual</CardTitle>
@@ -52,7 +53,7 @@ export default function Home() {
           </CardContent>
           <CardFooter>
             <Button>
-              <Link href="/join">Enquire Now</Link>
+              <Link href="/join">Book your 2-week free trial</Link>
             </Button>
           </CardFooter>
         </Card>
@@ -79,13 +80,18 @@ export default function Home() {
           </CardContent>
           <CardFooter>
             <Button>
-              <Link href="/join">Enquire Now</Link>
+              <Link href="/join">Book your 2-week free trial</Link>
             </Button>
           </CardFooter>
         </Card>
-        <Card className="rounded-none mx-6">
+        <Card className="rounded-none mx-6 border-purple-300 border-2">
           <CardHeader>
-            <CardTitle className="text-lg font-bold">Adult</CardTitle>
+            <div className="flex flex-row justify-between">
+              <CardTitle className="text-lg font-bold">Adult</CardTitle>
+              <Badge className="bg-purple-500 hover:bg-purple-400 text-xs">
+                Most Popular!
+              </Badge>
+            </div>
             <CardDescription className="text-md">
               For dedicated practitioners seeking unlimited training and
               structured advancement.
@@ -105,7 +111,7 @@ export default function Home() {
           </CardContent>
           <CardFooter>
             <Button>
-              <Link href="/join">Enquire Now</Link>
+              <Link href="/join">Book your 2-week free trial</Link>
             </Button>
           </CardFooter>
         </Card>
@@ -138,7 +144,7 @@ export default function Home() {
           </CardContent>
           <CardFooter>
             <Button>
-              <Link href="/join">Enquire Now</Link>
+              <Link href="/join">Book your 2-week free trial</Link>
             </Button>
           </CardFooter>
         </Card>

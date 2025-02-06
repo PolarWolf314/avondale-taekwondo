@@ -14,7 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import PaymentCardContent from "@/components/ui/PaymentCardContent";
+import PaymentCard from "@/components/ui/PaymentCard";
 import Link from "next/link";
 
 export default function Home() {
@@ -31,129 +31,65 @@ export default function Home() {
       </div>
       <div className="flex flex-col xl:grid xl:grid-cols-2 md:mx-8 xl:mx-16">
         <div className="md:grid md:grid-cols-2">
-          <Card className="rounded-none mx-6 md:mx-0 relative md:h-[32rem]">
-            <CardHeader>
-              <CardTitle className="text-lg font-bold">Casual</CardTitle>
-              <CardDescription className="text-md">
-                The perfect start to your Taekwon-Do journey. No strings
-                attached.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold flex flex-row place-items-center gap-1 mb-6">
-                $20{" "}
-                <span className="text-xs text-muted-foreground">/ session</span>
-              </div>
-              <PaymentCardContent
-                perks={[
-                  "Pay-as-you-go flexibility",
-                  "No commitment required",
-                  "Access to all regular classes",
-                  "Ideal for drop-in training",
-                ]}
-              />
-            </CardContent>
-            <CardFooter className="md:absolute md:bottom-0">
-              <Button>
-                <Link href="/join">Book your 2-week free trial</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-          <Card className="rounded-none mx-6 md:mx-0 relative h-[28rem]">
-            <CardHeader>
-              <CardTitle className="text-lg font-bold">Child/Student</CardTitle>
-              <CardDescription className="text-md">
-                Affordable training for students looking to progress and grow in
-                Taekwon-Do.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold flex flex-row place-items-center gap-1 mb-6">
-                $70{" "}
-                <span className="text-xs text-muted-foreground">/ month</span>
-              </div>
-              <PaymentCardContent
-                perks={[
-                  "Discounted rate for students",
-                  "Unlimited regular classes per month",
-                  "Structured progression with grading opportunities",
-                  "Personalised training tips from instructors",
-                ]}
-              />
-            </CardContent>
-            <CardFooter className="absolute bottom-0">
-              <Button>
-                <Link href="/join">Book your 2-week free trial</Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          <PaymentCard
+            perks={[
+              "Pay-as-you-go flexibility",
+              "No commitment required",
+              "Access to all regular classes",
+              "Ideal for drop-in training",
+            ]}
+            title="Casual"
+            description="The perfect start to your Taekwon-Do journey. No strings
+                attached."
+            price={20}
+            isMonthly={false}
+            isFamily={false}
+            isMostPopular={false}
+          />
+          <PaymentCard
+            perks={[
+              "Discounted rate for students",
+              "Unlimited regular classes per month",
+              "Structured progression with grading opportunities",
+              "Personalised training tips from instructors",
+            ]}
+            title="Student"
+            description="Affordable training for students looking to progress and grow in Taekwon-Do."
+            price={70}
+            isMonthly={true}
+            isFamily={false}
+            isMostPopular={false}
+          />
         </div>
         <div className="md:grid md:grid-cols-2">
-          <Card className="rounded-none mx-6 md:mx-0 border-purple-300 border-2 relative">
-            <CardHeader>
-              <div className="flex flex-row justify-between">
-                <CardTitle className="text-lg font-bold">Adult</CardTitle>
-                <Badge className="bg-purple-500 hover:bg-purple-400 text-xs">
-                  Most Popular!
-                </Badge>
-              </div>
-              <CardDescription className="text-md">
-                For dedicated practitioners seeking unlimited training and
-                structured advancement.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold flex flex-row place-items-center gap-1 mb-6">
-                $80{" "}
-                <span className="text-xs text-muted-foreground">/ month</span>
-              </div>
-              <PaymentCardContent
-                perks={[
-                  "Unlimited regular classes per month",
-                  "Structured progression with grading opportunities",
-                  "Personalised training tips from instructors",
-                ]}
-              />
-            </CardContent>
-            <CardFooter className="absolute bottom-0">
-              <Button>
-                <Link href="/join">Book your 2-week free trial</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-          <Card className="rounded-none mx-6 md:mx-0 relative">
-            <CardHeader>
-              <CardTitle className="text-lg font-bold">Family</CardTitle>
-              <CardDescription className="text-md">
-                Train together as a family and enjoy the best value for group
-                memberships.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold flex flex-row place-items-center gap-1 mb-6">
-                $80{" "}
-                <span className="text-xs text-muted-foreground">/ month +</span>{" "}
-                $25
-                <span className="text-xs text-muted-foreground">
-                  / extra person
-                </span>
-              </div>
-              <PaymentCardContent
-                perks={[
-                  "Best value for families",
-                  "Unlimited regular classes for the whole family",
-                  "Sibling/parent-child training opportunities",
-                  "Family discounts on grading fees",
-                  "Capped at $155/month",
-                ]}
-              />
-            </CardContent>
-            <CardFooter className="absolute bottom-0">
-              <Button>
-                <Link href="/join">Book your 2-week free trial</Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          <PaymentCard
+            perks={[
+              "Unlimited regular classes per month",
+              "Structured progression with grading opportunities",
+              "Personalised training tips from instructors",
+            ]}
+            title="Adult"
+            description="For dedicated practitioners seeking unlimited dtraining and structured advancement."
+            price={80}
+            isMonthly={true}
+            isFamily={false}
+            isMostPopular={true}
+          />
+          <PaymentCard
+            perks={[
+              "Best value for families",
+              "Unlimited regular classes for the whole family",
+              "Sibling/parent-child training opportunities",
+              "Family discounts on grading fees",
+              "Capped at $155/month",
+            ]}
+            title="Family"
+            description="Train together as a family and enjoy the best value for group memberships."
+            price={80}
+            isMonthly={true}
+            isFamily={true}
+            isMostPopular={false}
+          />
         </div>
       </div>
       <section className="w-full grid grid-cols-1 justify-items-center p-6 mb-6">

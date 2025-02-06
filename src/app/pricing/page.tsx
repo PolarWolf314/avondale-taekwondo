@@ -1,3 +1,9 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -137,6 +143,106 @@ export default function Home() {
           </CardFooter>
         </Card>
       </div>
+      <section className="w-full p-6 mb-6">
+        <h2 className="font-header text-2xl font-bold tracking-tighter mb-2">
+          General Questions
+        </h2>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="1">
+            <AccordionTrigger>
+              What is International Taekwon-Do (ITF)?
+            </AccordionTrigger>
+            <AccordionContent>
+              ITF (International Taekwon-Do Federation) is a traditional martial
+              art focused on self-defense, discipline, and technical precision.
+              Our club follows the ITF syllabus, including patterns, sparring,
+              and breaking techniques.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="2">
+            <AccordionTrigger>
+              How long does it take to get my black belt?
+            </AccordionTrigger>
+            <AccordionContent>
+              On average it takes a dedicated student 6-8 years to achieve their
+              Black Belt. It is possible to do this more quickly; however we
+              recommend that you take your time and fully understand the art
+              that you are learning.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="3">
+            <AccordionTrigger>
+              Do I need prior experience to join?
+            </AccordionTrigger>
+            <AccordionContent>
+              No, beginners are always welcome! Our classes cater to all skill
+              levels, from complete beginners to experienced martial artists.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        <h2 className="font-header text-2xl font-bold tracking-tighter mt-8 mb-2">
+          Training and Membership
+        </h2>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="1">
+            <AccordionTrigger>How often should I train?</AccordionTrigger>
+            <AccordionContent>
+              We offer two training sessions per week. We recommend that you
+              come to every session for steady progress, but you should train as
+              often as your schedule allows. As you rank up, we expect you to be
+              doing extra trainings outside of classes.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="2">
+            <AccordionTrigger>
+              What should I wear to my first class?
+            </AccordionTrigger>
+            <AccordionContent>
+              Comfortable sportswear is fine for your first few sessions. Once
+              you decide to commit to training, you’ll need an ITF-approved
+              dobok (uniform). Remember to bring water.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="3">
+            <AccordionTrigger>How does grading work?</AccordionTrigger>
+            <AccordionContent>
+              Grading is held every few months and tests your progress through
+              patterns, sparring, step-sparring, self-defense, and theory. Each
+              successful grading brings you closer to earning your black belt.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        <h2 className="font-header text-2xl font-bold tracking-tighter mt-8 mb-2">
+          Competitions and Family Training
+        </h2>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="1">
+            <AccordionTrigger>
+              Does your club participate in competitions?
+            </AccordionTrigger>
+            <AccordionContent>
+              Yes! We encourage students to compete in local, national, and even
+              international ITF tournaments.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="2">
+            <AccordionTrigger>Can families train together?</AccordionTrigger>
+            <AccordionContent>
+              Absolutely! We offer a family-friendly membership, making it
+              easier for parents and kids to train together.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="3">
+            <AccordionTrigger>Is there an age limit?</AccordionTrigger>
+            <AccordionContent>
+              There is not an explicit age limit. We are one of the few clubs in
+              NZ that continues to train adults and children together in the
+              same class. However because of this, children need to show some
+              basic levels of maturity. There is no upper age limit.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </section>
     </section>
   );
 }

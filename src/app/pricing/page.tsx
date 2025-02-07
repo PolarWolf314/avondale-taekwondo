@@ -59,7 +59,7 @@ export default function Home() {
               "Personalised training tips from instructors",
             ]}
             title="Adult"
-            description="For dedicated practitioners seeking unlimited dtraining and structured advancement."
+            description="For dedicated practitioners seeking unlimited training and structured advancement."
             price={80}
             isMonthly={true}
             isFamily={false}

@@ -38,13 +38,13 @@ export default function Home() {
           />
           <PaymentCard
             perks={[
-              "Discounted rate for students",
+              "Discounted rate for children and students",
               "Unlimited regular classes per month",
               "Structured progression with grading opportunities",
               "Personalised training tips from instructors",
             ]}
-            title="Student"
-            description="Affordable training for students looking to progress and grow in Taekwon-Do."
+            title="Children/Student"
+            description="Affordable training for children and students looking to progress and grow in Taekwon-Do."
             price={70}
             isMonthly={true}
             isFamily={false}

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="lg:grid lg:grid-cols-2">
+    <div className="lg:grid lg:grid-cols-2 flex-grow">
       <section className="max-w-2xl lg:max-w-3xl">
         <div className="p-12 pb-0 flex flex-col gap-10">
           <h1 className="font-header font-bold text-3xl tracking-tighter">

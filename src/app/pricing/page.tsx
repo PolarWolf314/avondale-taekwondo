@@ -4,18 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import PaymentCard from "@/components/ui/PaymentCard";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -30,7 +19,7 @@ export default function Home() {
         </p>
       </div>
       <div className="flex flex-col xl:grid xl:grid-cols-2 md:mx-8 xl:mx-16">
-        <div className="md:grid md:grid-cols-2">
+        <div className="md:grid md:grid-cols-2 xl:place-self-end">
           <PaymentCard
             perks={[
               "Pay-as-you-go flexibility",
@@ -45,6 +34,7 @@ export default function Home() {
             isMonthly={false}
             isFamily={false}
             isMostPopular={false}
+            className="md:place-self-end"
           />
           <PaymentCard
             perks={[
@@ -61,7 +51,7 @@ export default function Home() {
             isMostPopular={false}
           />
         </div>
-        <div className="md:grid md:grid-cols-2">
+        <div className="md:grid md:grid-cols-2 xl:place-self-start">
           <PaymentCard
             perks={[
               "Unlimited regular classes per month",
@@ -74,6 +64,7 @@ export default function Home() {
             isMonthly={true}
             isFamily={false}
             isMostPopular={true}
+            className="md:place-self-end"
           />
           <PaymentCard
             perks={[

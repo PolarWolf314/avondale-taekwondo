@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface PaymentCardProps {
   perks: string[];
@@ -20,6 +21,7 @@ interface PaymentCardProps {
   isMonthly: boolean;
   isFamily: boolean;
   isMostPopular: boolean;
+  className?: string;
 }
 
 const PaymentCard: React.FC<PaymentCardProps> = ({
@@ -30,22 +32,25 @@ const PaymentCard: React.FC<PaymentCardProps> = ({
   isMonthly,
   isFamily,
   isMostPopular,
+  className,
 }) => {
   const paymentCardPerks = perks.map((perk, index) => (
-    <li key={index} className="flex items-center gap-2">
-      <Check className="text-green-500" />
-      <span>{perk}</span>
+    <li key={index}>
+      <div className="flex flex-row gap-2 pb-1">
+        <Check className="text-green-500 flex-shrink-0" />
+        <span>{perk}</span>
+      </div>
     </li>
   ));
 
   let priceComponent = (
-    <div className="text-3xl font-bold flex flex-row place-items-center gap-1 mb-6">
+    <div className="text-4xl font-bold flex flex-row place-items-center gap-1 mb-6">
       ${price} <span className="text-xs text-muted-foreground">/ session</span>
     </div>
   );
   if (isMonthly) {
     priceComponent = (
-      <div className="text-3xl font-bold flex flex-row place-items-center gap-1 mb-6">
+      <div className="text-4xl font-bold flex flex-row place-items-center gap-1 mb-6">
         ${price} <span className="text-xs text-muted-foreground">/ month</span>
       </div>
     );
@@ -53,7 +58,7 @@ const PaymentCard: React.FC<PaymentCardProps> = ({
 
   if (isMonthly && isFamily) {
     priceComponent = (
-      <div className="text-3xl font-bold flex flex-row place-items-center gap-1 mb-6">
+      <div className="text-4xl font-bold flex flex-row place-items-center gap-1 mb-6">
         ${price}{" "}
         <span className="text-xs text-muted-foreground">/ month +</span> $25
         <span className="text-xs text-muted-foreground">/ extra person</span>
@@ -63,7 +68,11 @@ const PaymentCard: React.FC<PaymentCardProps> = ({
 
   return (
     <Card
-      className={`${isMostPopular ? "rounded-none mx-6 md:mx-0 relative border-purple-300 border-2" : "rounded-none mx-6 md:mx-0 relative"}`}
+      className={cn(
+        "rounded-none mx-6 md:mx-0 relative grid md:grid-rows-4 md:h-[30rem] md:max-w-md md:place-content-center",
+        isMostPopular ? "border-purple-300 border-2" : "",
+        className,
+      )}
     >
       <CardHeader>
         <div
@@ -76,13 +85,15 @@ const PaymentCard: React.FC<PaymentCardProps> = ({
             Most Popular!
           </Badge>
         </div>
-        <CardDescription className="text-md">{description}</CardDescription>
+        <CardDescription className="text-md pt-2">
+          {description}
+        </CardDescription>
       </CardHeader>
       <CardContent>
-        <>{priceComponent}</>
-        <>{paymentCardPerks}</>
+        <div className="py-4">{priceComponent}</div>
+        <ul>{paymentCardPerks}</ul>
       </CardContent>
-      <CardFooter className="absolute bottom-0">
+      <CardFooter className="md:absolute md:bottom-0">
         <Button>
           <Link href="/join">Book your 2-week free trial</Link>
         </Button>

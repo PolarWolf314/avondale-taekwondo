@@ -69,7 +69,7 @@ const PaymentCard: React.FC<PaymentCardProps> = ({
   return (
     <Card
       className={cn(
-        "rounded-none mx-6 md:mx-0 relative grid md:grid-rows-4 md:h-[30rem] md:max-w-md md:place-content-center",
+        "rounded-none mx-6 md:mx-0 relative grid md:grid-rows-4 md:h-[30rem] xl:h-[32rem] md:max-w-md md:place-content-center",
         isMostPopular ? "border-purple-300 border-2" : "",
         className,
       )}

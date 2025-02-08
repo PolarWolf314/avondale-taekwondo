@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -74,7 +75,7 @@ const EmailEnquiry = () => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Name *</FormLabel>
               <FormControl>
                 <Input placeholder="Please provide your name" {...field} />
               </FormControl>
@@ -88,7 +89,7 @@ const EmailEnquiry = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>Email *</FormLabel>
               <FormControl>
                 <Input placeholder="Enter your email" type="email" {...field} />
               </FormControl>
@@ -110,6 +111,7 @@ const EmailEnquiry = () => {
                   onChange={(e) => field.onChange(e.target.value)}
                 />
               </FormControl>
+              <FormDescription>Optional.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -120,7 +122,7 @@ const EmailEnquiry = () => {
           name="reason"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Reason</FormLabel>
+              <FormLabel>Reason *</FormLabel>
               <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select a reason" />
@@ -128,7 +130,7 @@ const EmailEnquiry = () => {
                 <SelectContent>
                   <SelectItem value="general">General Inquiry</SelectItem>
                   <SelectItem value="membership">Membership</SelectItem>
-                  <SelectItem value="training">Training</SelectItem>
+                  <SelectItem value="trial">Booking a Free Trial</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -159,6 +161,10 @@ const EmailEnquiry = () => {
                   />
                 </PopoverContent>
               </Popover>
+              <FormDescription>
+                Pick the date you would like to start your 2 week free trial.
+                Picking a date is optional.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -169,10 +175,11 @@ const EmailEnquiry = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Message *</FormLabel>
               <FormControl>
                 <Textarea placeholder="Write your message here" {...field} />
               </FormControl>
+              <FormDescription>Inputs with a * are required.</FormDescription>
               <FormMessage />
             </FormItem>
           )}

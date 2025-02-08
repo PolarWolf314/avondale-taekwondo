@@ -56,7 +56,7 @@ const EmailEnquiry = () => {
       name: "",
       email: "",
       reason: "",
-      phone: "",
+      phone: undefined,
       date: undefined,
       message: "",
     },
@@ -106,8 +106,8 @@ const EmailEnquiry = () => {
               <FormControl>
                 <Input
                   placeholder="Enter your NZ phone number"
-                  {...field}
-                  onChange={(e) => field.onChange(e.target.value || undefined)}
+                  value={field.value ?? ""} // ensure a string is always passed
+                  onChange={(e) => field.onChange(e.target.value)}
                 />
               </FormControl>
               <FormMessage />

@@ -1,3 +1,10 @@
+import EmailEnquiry from "@/components/ui/EmailEnquiry";
+
 export default function Home() {
-  return <div className="flex-grow">This is the join us page</div>;
+  return (
+    <div className="flex-grow">
+      <div>{process.env.RESEND_API_KEY}</div>
+      <EmailEnquiry />
+    </div>
+  );
 }

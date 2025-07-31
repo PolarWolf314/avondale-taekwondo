@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -63,6 +63,7 @@ export const enquirySchema = z.object({
     .string()
     .min(1, "Please write a message")
     .max(500, "Message must be at most 500 characters"),
+  website: z.string().optional(), // honeypot field
 });
 
 const EmailEnquiry = () => {
@@ -71,6 +72,7 @@ const EmailEnquiry = () => {
     "idle" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [spamToken, setSpamToken] = useState<string>("");
 
   const form = useForm<z.infer<typeof enquirySchema>>({
     resolver: zodResolver(enquirySchema),
@@ -81,8 +83,26 @@ const EmailEnquiry = () => {
       phone: undefined,
       date: undefined,
       message: "",
+      website: "", // honeypot field
     },
   });
+
+  // Fetch spam protection token when component loads
+  useEffect(() => {
+    const fetchToken = async () => {
+      try {
+        const response = await fetch("/api/generate-token");
+        if (response.ok) {
+          const data = await response.json();
+          setSpamToken(data.token);
+        }
+      } catch (error) {
+        console.error("Failed to fetch spam token:", error);
+      }
+    };
+
+    fetchToken();
+  }, []);
 
   async function onSubmit(values: z.infer<typeof enquirySchema>) {
     setIsSubmitting(true);
@@ -98,6 +118,8 @@ const EmailEnquiry = () => {
         body: JSON.stringify({
           ...values,
           date: values.date?.toISOString(),
+          spamToken: spamToken,
+          website: values.website || "",
         }),
       });
 
@@ -175,7 +197,9 @@ const EmailEnquiry = () => {
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">Location</p>
+                    <p className="font-medium text-gray-900 text-sm">
+                      Location
+                    </p>
                     <p className="text-gray-600 text-sm">
                       Avondale Primary School
                       <br />
@@ -189,7 +213,9 @@ const EmailEnquiry = () => {
                 <div className="flex items-start space-x-3">
                   <Clock className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">Training Times</p>
+                    <p className="font-medium text-gray-900 text-sm">
+                      Training Times
+                    </p>
                     <p className="text-gray-600 text-sm">
                       Monday & Thursday
                       <br />
@@ -233,8 +259,8 @@ const EmailEnquiry = () => {
                         Message sent successfully!
                       </h4>
                       <p className="text-sm text-green-700 mt-1">
-                        Thank you for your enquiry. We'll get back to you within
-                        24 hours.
+                        Thank you for your enquiry. We'll get back to you as
+                        soon as we can!
                       </p>
                     </div>
                   </div>
@@ -261,6 +287,24 @@ const EmailEnquiry = () => {
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-6"
                   >
+                    {/* Honeypot field - hidden from users but visible to bots */}
+                    <FormField
+                      control={form.control}
+                      name="website"
+                      render={({ field }) => (
+                        <FormItem className="absolute left-[-9999px] opacity-0 pointer-events-none">
+                          <FormLabel>Website</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Leave this field empty"
+                              tabIndex={-1}
+                              autoComplete="off"
+                              {...field}
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
                     {/* Name and Email Row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <FormField

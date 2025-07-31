@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
+import { validateSpamProtectionToken } from '@/lib/spam-protection';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -12,6 +13,9 @@ const emailSchema = z.object({
   reason: z.string().min(1),
   date: z.string().optional(),
   message: z.string().min(1).max(500),
+  // Spam protection fields
+  spamToken: z.string().min(1),
+  website: z.string().optional(), // honeypot field
 });
 
 export async function POST(request: NextRequest) {
@@ -21,7 +25,23 @@ export async function POST(request: NextRequest) {
     // Validate the request body
     const validatedData = emailSchema.parse(body);
 
-    const { name, email, phone, reason, date, message } = validatedData;
+    const { name, email, phone, reason, date, message, spamToken, website } = validatedData;
+
+    // Get client IP for spam protection validation
+    const forwarded = request.headers.get('x-forwarded-for');
+    const clientIP = forwarded ? forwarded.split(',')[0] : 
+                     request.headers.get('x-real-ip') || 
+                     'unknown';
+    
+    // Validate spam protection
+    const spamCheck = validateSpamProtectionToken(spamToken, website || '', clientIP);
+    if (!spamCheck.valid) {
+      console.log('Spam protection triggered:', spamCheck.error);
+      return NextResponse.json(
+        { error: 'Security validation failed' },
+        { status: 400 }
+      );
+    }
 
     // Format the email content
     const emailSubject = `New Enquiry: ${reason} - ${name}`;

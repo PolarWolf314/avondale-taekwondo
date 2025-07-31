@@ -45,7 +45,7 @@ const Hero = () => {
             alt="Images of Avondale Taekwon-Do in action"
             fill
             unoptimized
-            className={`object-cover transition-opacity ${
+            className={`object-cover ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
             priority={index === 0}

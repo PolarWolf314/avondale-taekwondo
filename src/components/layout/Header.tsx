@@ -9,7 +9,7 @@ const Header = () => {
     <header className="bg-gray-200">
       <nav className="flex flex-row justify-between items-center py-4 px-6">
         <Logo />
-        <div className="block sm:hidden">
+        <div className="block sm:hidden items-center">
           <MenuSheet />
         </div>
         <div className="hidden sm:block">

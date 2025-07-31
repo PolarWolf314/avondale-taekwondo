@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Avondale Taekwon-Do Website
+
+A modern website for Avondale Taekwon-Do, a martial arts school based in Avondale, Auckland, New Zealand. The site showcases the school's community-focused approach to teaching traditional Taekwon-Do, featuring information about classes, instructors, and the five tenets of Taekwon-Do.
+
+## Features
+
+- **Responsive Design**: Optimized for all devices from mobile to desktop
+- **Dynamic Hero Section**: Rotating image carousel showcasing training photos
+- **Contact Forms**: Email enquiry system for prospective students
+- **Modern UI**: Built with Tailwind CSS and Radix UI components
+- **Fast Performance**: Powered by Next.js 15 with Turbopack
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Runtime**: Bun
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI primitives
+- **Forms**: React Hook Form with Zod validation
+- **Email**: Resend API integration
+- **TypeScript**: Full type safety
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Make sure you have [Bun](https://bun.sh) installed on your system.
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+git clone <repository-url>
+cd avondale-taekwondo
+```
+
+2. Install dependencies:
+
+```bash
+bun install
+```
+
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add your environment variables:
+
+```bash
+# Email service configuration
+RESEND_API_KEY=your_resend_api_key
+CONTACT_EMAIL=your_contact_email
+```
+
+### Development
+
+Start the development server with Turbopack:
+
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page auto-updates as you edit files. Start by modifying `src/app/page.tsx`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Building for Production
 
-## Learn More
+Build the application:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+bun run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the production server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+bun start
+```
 
-## Deploy on Vercel
+### Linting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run ESLint to check for code quality issues:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+bun run lint
+```
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── about/             # About page
+│   ├── join/              # Contact/enquiry page
+│   ├── pricing/           # Pricing information
+│   └── api/               # API routes (email handling)
+├── components/
+│   ├── email/             # Email form components
+│   ├── layout/            # Header, footer, hero components
+│   └── ui/                # Reusable UI components
+└── lib/                   # Utility functions
+```
+
+## Key Pages
+
+- **Home** (`/`): Hero section with rotating images and key information
+- **About** (`/about`): School history, instructors, and achievements
+- **Join** (`/join`): Contact form for prospective students
+- **Pricing** (`/pricing`): Class schedules and pricing information
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Make your changes and commit: `git commit -m 'Add your feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Submit a pull request
+
+## License
+
+This project was built for Avondale Taekwon-Do. As such, please do not use our branding and image. However, feel free to play around with the source code! The code itself is free for modification and comes as-is, without warranty.

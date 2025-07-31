@@ -4,7 +4,6 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -17,7 +16,9 @@ const MenuSheet = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Menu />
+        <button className="p-2 hover:bg-gray-300 rounded-md transition-colors flex items-center justify-center">
+          <Menu className="h-6 w-6" />
+        </button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
@@ -25,28 +26,50 @@ const MenuSheet = () => {
             <Logo />
           </SheetTitle>
         </SheetHeader>
-        <SheetFooter className="gap-4 pt-10">
+        <div className="gap-4 pt-10 flex flex-col items-center">
           <SheetClose asChild>
-            <Button asChild className="mx-24">
-              <Link href="/join">Enquire</Link>
-            </Button>
+            <Link
+              href="/"
+              prefetch={true}
+              className="w-full flex justify-center"
+            >
+              <Button variant="link" className="w-full">
+                Home
+              </Button>
+            </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Button asChild variant="link">
-              <Link href="/pricing">Pricing and FAQ</Link>
-            </Button>
+            <Link
+              href="/about"
+              prefetch={true}
+              className="w-full flex justify-center"
+            >
+              <Button variant="link" className="w-full">
+                About
+              </Button>
+            </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Button asChild variant="link">
-              <Link href="/about">About</Link>
-            </Button>
+            <Link
+              href="/pricing"
+              prefetch={true}
+              className="w-full flex justify-center"
+            >
+              <Button variant="link" className="w-full">
+                Pricing and FAQ
+              </Button>
+            </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Button asChild variant="link">
-              <Link href="/">Home</Link>
-            </Button>
+            <Link
+              href="/join"
+              prefetch={true}
+              className="w-full flex justify-center"
+            >
+              <Button className="w-full max-w-xs">Enquire</Button>
+            </Link>
           </SheetClose>
-        </SheetFooter>
+        </div>
       </SheetContent>
     </Sheet>
   );

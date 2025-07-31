@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div className="flex-grow">This is the join us page</div>;
+import { EmailEnquiryForm } from "@/components/email";
+
+export default function Join() {
+  return <EmailEnquiryForm />;
 }

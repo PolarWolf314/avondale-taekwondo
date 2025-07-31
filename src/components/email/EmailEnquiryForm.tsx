@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -38,7 +38,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { CalendarIcon, Mail, Phone, MapPin, Clock } from "lucide-react";
+import {
+  CalendarIcon,
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 
 const nzPhoneRegex = /^(\+64|0)[1-9]\d{7,9}$/;
 
@@ -58,6 +66,12 @@ export const enquirySchema = z.object({
 });
 
 const EmailEnquiry = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const form = useForm<z.infer<typeof enquirySchema>>({
     resolver: zodResolver(enquirySchema),
     defaultValues: {
@@ -70,8 +84,40 @@ const EmailEnquiry = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof enquirySchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof enquirySchema>) {
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...values,
+          date: values.date?.toISOString(),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send email");
+      }
+
+      setSubmitStatus("success");
+      form.reset();
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "An unexpected error occurred",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -111,8 +157,8 @@ const EmailEnquiry = () => {
                 <div className="flex items-start space-x-3">
                   <Mail className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900">Email</p>
-                    <p className="text-gray-600">
+                    <p className="font-medium text-gray-900 text-sm">Email</p>
+                    <p className="text-gray-600 text-sm">
                       instructor@avondaletkd.co.nz
                     </p>
                   </div>
@@ -121,16 +167,16 @@ const EmailEnquiry = () => {
                 <div className="flex items-start space-x-3">
                   <Phone className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900">Phone</p>
-                    <p className="text-gray-600">+64 21 164 6158</p>
+                    <p className="font-medium text-gray-900 text-sm">Phone</p>
+                    <p className="text-gray-600 text-sm">+64 21 164 6158</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900">Location</p>
-                    <p className="text-gray-600">
+                    <p className="font-medium text-gray-900 text-sm">Location</p>
+                    <p className="text-gray-600 text-sm">
                       Avondale Primary School
                       <br />
                       Crayford Street West, Avondale
@@ -143,9 +189,9 @@ const EmailEnquiry = () => {
                 <div className="flex items-start space-x-3">
                   <Clock className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900">Training Times</p>
-                    <p className="text-gray-600">
-                      Tuesday & Thursday
+                    <p className="font-medium text-gray-900 text-sm">Training Times</p>
+                    <p className="text-gray-600 text-sm">
+                      Monday & Thursday
                       <br />
                       6:30 PM - 8:00 PM
                     </p>
@@ -178,6 +224,38 @@ const EmailEnquiry = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
+                {/* Success Message */}
+                {submitStatus === "success" && (
+                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-medium text-green-800">
+                        Message sent successfully!
+                      </h4>
+                      <p className="text-sm text-green-700 mt-1">
+                        Thank you for your enquiry. We'll get back to you within
+                        24 hours.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === "error" && (
+                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start space-x-3">
+                    <AlertCircle className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-medium text-red-800">
+                        Failed to send message
+                      </h4>
+                      <p className="text-sm text-red-700 mt-1">
+                        {errorMessage ||
+                          "Please try again or contact us directly."}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
@@ -246,7 +324,7 @@ const EmailEnquiry = () => {
                               />
                             </FormControl>
                             <FormDescription className="text-xs">
-                              Optional - for faster response
+                              Optional — for faster response
                             </FormDescription>
                             <FormMessage />
                           </FormItem>
@@ -358,9 +436,10 @@ const EmailEnquiry = () => {
                     <div className="pt-4">
                       <Button
                         type="submit"
-                        className="w-full sm:w-auto px-8 py-3 text-base font-medium bg-purple-600 hover:bg-purple-700"
+                        disabled={isSubmitting}
+                        className="w-full sm:w-auto px-8 py-3 text-base font-medium bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Send Message
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
                       <p className="text-xs text-gray-500 mt-2">
                         Fields marked with * are required

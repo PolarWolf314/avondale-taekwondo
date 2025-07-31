@@ -1,9 +1,5 @@
 import { EmailEnquiryForm } from "@/components/email";
 
-export default function Home() {
-  return (
-    <div className="flex-grow">
-      <EmailEnquiryForm />
-    </div>
-  );
+export default function Join() {
+  return <EmailEnquiryForm />;
 }

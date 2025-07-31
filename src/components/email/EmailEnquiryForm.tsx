@@ -24,6 +24,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -31,7 +38,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const nzPhoneRegex = /^(\+64|0)[1-9]\d{7,9}$/;
 
@@ -68,126 +75,305 @@ const EmailEnquiry = () => {
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name *</FormLabel>
-              <FormControl>
-                <Input placeholder="Please provide your name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <div className="flex-grow bg-gray-50">
+      {/* Header Section */}
+      <div className="bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="text-center">
+            <h1 className="font-header font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tighter text-gray-900 mb-4">
+              Get in Touch
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Ready to start your Taekwon-Do journey? We'd love to hear from
+              you. Fill out the form below and we'll get back to you as soon as
+              possible.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email *</FormLabel>
-              <FormControl>
-                <Input placeholder="Enter your email" type="email" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          {/* Contact Information */}
+          <div className="lg:col-span-1 space-y-6">
+            <Card className="border-0 shadow-sm">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold">
+                  Contact Information
+                </CardTitle>
+                <CardDescription>
+                  Get in touch with us directly or visit us at our training
+                  location.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Mail className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Email</p>
+                    <p className="text-gray-600">
+                      instructor@avondaletkd.co.nz
+                    </p>
+                  </div>
+                </div>
 
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Phone</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Enter your NZ phone number"
-                  value={field.value ?? ""} // ensure a string is always passed
-                  onChange={(e) => field.onChange(e.target.value)}
-                />
-              </FormControl>
-              <FormDescription>Optional.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <div className="flex items-start space-x-3">
+                  <Phone className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Phone</p>
+                    <p className="text-gray-600">+64 21 164 6158</p>
+                  </div>
+                </div>
 
-        <FormField
-          control={form.control}
-          name="reason"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Reason *</FormLabel>
-              <Select onValueChange={field.onChange} value={field.value}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a reason" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="general">General Inquiry</SelectItem>
-                  <SelectItem value="membership">Membership</SelectItem>
-                  <SelectItem value="trial">Booking a Free Trial</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <div className="flex items-start space-x-3">
+                  <MapPin className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Location</p>
+                    <p className="text-gray-600">
+                      Avondale Primary School
+                      <br />
+                      Crayford Street West, Avondale
+                      <br />
+                      Auckland 1026, NZ
+                    </p>
+                  </div>
+                </div>
 
-        <FormField
-          control={form.control}
-          name="date"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Preferred Date</FormLabel>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <FormControl>
-                    <Button variant="outline">
-                      {field.value ? format(field.value, "PPP") : "Pick a date"}
-                      <CalendarIcon className="ml-2 h-4 w-4" />
-                    </Button>
-                  </FormControl>
-                </PopoverTrigger>
-                <PopoverContent align="start">
-                  <Calendar
-                    mode="single"
-                    selected={field.value}
-                    onSelect={field.onChange}
-                  />
-                </PopoverContent>
-              </Popover>
-              <FormDescription>
-                Pick the date you would like to start your 2 week free trial.
-                Picking a date is optional.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <div className="flex items-start space-x-3">
+                  <Clock className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">Training Times</p>
+                    <p className="text-gray-600">
+                      Tuesday & Thursday
+                      <br />
+                      6:30 PM - 8:00 PM
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message *</FormLabel>
-              <FormControl>
-                <Textarea placeholder="Write your message here" {...field} />
-              </FormControl>
-              <FormDescription>Inputs with a * are required.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+            <Card className="border-0 shadow-sm bg-purple-50">
+              <CardContent className="pt-6">
+                <h3 className="font-bold text-lg mb-2">Free 2-Week Trial</h3>
+                <p className="text-gray-700 text-sm">
+                  New to Taekwon-Do? Join us for a free 2-week trial to
+                  experience our training and see if it's right for you. No
+                  commitment required!
+                </p>
+              </CardContent>
+            </Card>
+          </div>
 
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+          {/* Contact Form */}
+          <div className="lg:col-span-2">
+            <Card className="border-0 shadow-sm">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold">
+                  Send us a Message
+                </CardTitle>
+                <CardDescription>
+                  Fill out the form below and we'll respond as soon as possible.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Form {...form}>
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-6"
+                  >
+                    {/* Name and Email Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-medium text-gray-700">
+                              Name *
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="Your full name"
+                                className="h-11"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-medium text-gray-700">
+                              Email *
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="email@example.com"
+                                type="email"
+                                className="h-11"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    {/* Phone and Reason Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-medium text-gray-700">
+                              Phone
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="021 123 4567"
+                                className="h-11"
+                                value={field.value ?? ""}
+                                onChange={(e) => field.onChange(e.target.value)}
+                              />
+                            </FormControl>
+                            <FormDescription className="text-xs">
+                              Optional - for faster response
+                            </FormDescription>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="reason"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-medium text-gray-700">
+                              Reason for Contact *
+                            </FormLabel>
+                            <Select
+                              onValueChange={field.onChange}
+                              value={field.value}
+                            >
+                              <SelectTrigger className="h-11">
+                                <SelectValue placeholder="What can we help with?" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="trial">
+                                  Book a Free Trial
+                                </SelectItem>
+                                <SelectItem value="membership">
+                                  Membership Inquiry
+                                </SelectItem>
+                                <SelectItem value="general">
+                                  General Question
+                                </SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    {/* Preferred Date */}
+                    <FormField
+                      control={form.control}
+                      name="date"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-medium text-gray-700">
+                            Preferred Start Date
+                          </FormLabel>
+                          <Popover>
+                            <PopoverTrigger asChild>
+                              <FormControl>
+                                <Button
+                                  variant="outline"
+                                  className="h-11 w-full justify-start text-left font-normal"
+                                >
+                                  {field.value
+                                    ? format(field.value, "PPP")
+                                    : "Select a date (optional)"}
+                                  <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                </Button>
+                              </FormControl>
+                            </PopoverTrigger>
+                            <PopoverContent
+                              className="w-auto p-0"
+                              align="start"
+                            >
+                              <Calendar
+                                mode="single"
+                                selected={field.value}
+                                onSelect={field.onChange}
+                                disabled={(date) => date < new Date()}
+                                initialFocus
+                              />
+                            </PopoverContent>
+                          </Popover>
+                          <FormDescription className="text-xs">
+                            When would you like to start your trial? (Optional)
+                          </FormDescription>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {/* Message */}
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-medium text-gray-700">
+                            Message *
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Tell us about yourself, your experience with martial arts, any questions you have, or anything else you'd like us to know..."
+                              className="min-h-[120px] resize-none"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormDescription className="text-xs">
+                            {field.value?.length || 0}/500 characters
+                          </FormDescription>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {/* Submit Button */}
+                    <div className="pt-4">
+                      <Button
+                        type="submit"
+                        className="w-full sm:w-auto px-8 py-3 text-base font-medium bg-purple-600 hover:bg-purple-700"
+                      >
+                        Send Message
+                      </Button>
+                      <p className="text-xs text-gray-500 mt-2">
+                        Fields marked with * are required
+                      </p>
+                    </div>
+                  </form>
+                </Form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

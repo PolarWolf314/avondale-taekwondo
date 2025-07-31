@@ -45,8 +45,8 @@ export default function PrivacyPolicy() {
                     Privacy-First Approach
                   </h3>
                   <p className="text-green-700">
-                    We believe in minimal data collection. We don't use cookies,
-                    don't track your browsing, and only collect information when
+                    We believe in minimal data collection. We don&apos;t use cookies,
+                    don&apos;t track your browsing, and only collect information when
                     you voluntarily contact us through our enquiry form.
                   </p>
                 </div>
@@ -81,19 +81,19 @@ export default function PrivacyPolicy() {
 
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  What We Don't Collect
+                  What We Don&apos;t Collect
                 </h4>
                 <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
                   <li>
-                    <strong>No cookies</strong> - We don't use any tracking
+                    <strong>No cookies</strong> - We don&apos;t use any tracking
                     cookies
                   </li>
                   <li>
-                    <strong>No browsing data</strong> - We don't track your
+                    <strong>No browsing data</strong> - We don&apos;t track your
                     website usage
                   </li>
                   <li>
-                    <strong>No personal profiles</strong> - We don't build user
+                    <strong>No personal profiles</strong> - We don&apos;t build user
                     profiles
                   </li>
                   <li>
@@ -211,7 +211,7 @@ export default function PrivacyPolicy() {
                   channels
                 </li>
                 <li>
-                  We don't store your information in databases or tracking
+                  We don&apos;t store your information in databases or tracking
                   systems
                 </li>
                 <li>

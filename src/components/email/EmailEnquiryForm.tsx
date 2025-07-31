@@ -152,8 +152,8 @@ const EmailEnquiry = () => {
               Get in Touch
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Ready to start your Taekwon-Do journey? We'd love to hear from
-              you. Fill out the form below and we'll get back to you as soon as
+              Ready to start your Taekwon-Do journey? We&apos;d love to hear from
+              you. Fill out the form below and we&apos;ll get back to you as soon as
               possible.
             </p>
           </div>
@@ -231,7 +231,7 @@ const EmailEnquiry = () => {
                 <h3 className="font-bold text-lg mb-2">Free 2-Week Trial</h3>
                 <p className="text-gray-700 text-sm">
                   New to Taekwon-Do? Join us for a free 2-week trial to
-                  experience our training and see if it's right for you. No
+                  experience our training and see if it&apos;s right for you. No
                   commitment required!
                 </p>
               </CardContent>
@@ -246,7 +246,7 @@ const EmailEnquiry = () => {
                   Send us a Message
                 </CardTitle>
                 <CardDescription>
-                  Fill out the form below and we'll respond as soon as possible.
+                  Fill out the form below and we&apos;ll respond as soon as possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -259,7 +259,7 @@ const EmailEnquiry = () => {
                         Message sent successfully!
                       </h4>
                       <p className="text-sm text-green-700 mt-1">
-                        Thank you for your enquiry. We'll get back to you as
+                        Thank you for your enquiry. We&apos;ll get back to you as
                         soon as we can!
                       </p>
                     </div>

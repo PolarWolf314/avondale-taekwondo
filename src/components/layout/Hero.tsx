@@ -17,21 +17,11 @@ const images = [
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>(
-    new Array(images.length).fill(false),
-  );
 
   // Preload all images
   useEffect(() => {
-    images.forEach((src, index) => {
+    images.forEach((src) => {
       const img = new window.Image();
-      img.onload = () => {
-        setImagesLoaded((prev) => {
-          const newLoaded = [...prev];
-          newLoaded[index] = true;
-          return newLoaded;
-        });
-      };
       img.src = src;
     });
   }, []);

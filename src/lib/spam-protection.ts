@@ -80,7 +80,7 @@ export function validateSpamProtectionToken(
     
     return { valid: true };
     
-  } catch (error) {
+  } catch {
     return { valid: false, error: 'Invalid token format' };
   }
 }

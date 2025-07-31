@@ -30,10 +30,10 @@ export default function CodeOfConduct() {
                   The Art of Kicking and Punching
                 </h3>
                 <p className="text-purple-700 text-lg leading-relaxed">
-                  "When you put on the dobok, you become a student of
+                  &ldquo;When you put on the dobok, you become a student of
                   Taekwon-Do. Regardless of age, background, or experience, we
                   are all united in our journey of self-improvement through
-                  discipline, respect, and hard work."
+                  discipline, respect, and hard work.&rdquo;
                 </p>
               </div>
             </CardContent>
@@ -49,7 +49,7 @@ export default function CodeOfConduct() {
             <CardContent>
               <p className="text-gray-700 mb-4">
                 Our code of conduct is built upon the International Taekwon-Do
-                Federation (ITF) Instructor's Code of Conduct, adapted for our
+                Federation (ITF) Instructor&apos;s Code of Conduct, adapted for our
                 dojang community. These time-tested principles ensure we
                 maintain the highest standards of martial arts practice and
                 character development.
@@ -242,7 +242,7 @@ export default function CodeOfConduct() {
                     respectfully
                   </li>
                   <li>
-                    Practice with appropriate intensity for your partner's skill
+                    Practice with appropriate intensity for your partner&apos;s skill
                     level
                   </li>
                   <li>Help maintain a clean and safe training environment</li>
@@ -328,10 +328,10 @@ export default function CodeOfConduct() {
                 <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
                   <li>
                     Practice techniques with appropriate control for your
-                    partner's skill level
+                    partner&apos;s skill level
                   </li>
                   <li>
-                    Stop immediately if someone calls "stop" or appears injured
+                    Stop immediately if someone calls &ldquo;stop&rdquo; or appears injured
                   </li>
                   <li>
                     Report any unsafe conditions or equipment to instructors

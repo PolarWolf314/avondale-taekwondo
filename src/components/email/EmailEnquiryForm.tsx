@@ -152,9 +152,9 @@ const EmailEnquiry = () => {
               Get in Touch
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Ready to start your Taekwon-Do journey? We&apos;d love to hear from
-              you. Fill out the form below and we&apos;ll get back to you as soon as
-              possible.
+              Ready to start your Taekwon-Do journey? We&apos;d love to hear
+              from you. Fill out the form below and we&apos;ll get back to you
+              as soon as possible.
             </p>
           </div>
         </div>
@@ -246,7 +246,8 @@ const EmailEnquiry = () => {
                   Send us a Message
                 </CardTitle>
                 <CardDescription>
-                  Fill out the form below and we&apos;ll respond as soon as possible.
+                  Fill out the form below and we&apos;ll respond as soon as
+                  possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -259,8 +260,8 @@ const EmailEnquiry = () => {
                         Message sent successfully!
                       </h4>
                       <p className="text-sm text-green-700 mt-1">
-                        Thank you for your enquiry. We&apos;ll get back to you as
-                        soon as we can!
+                        Thank you for your enquiry. We&apos;ll get back to you
+                        as soon as we can!
                       </p>
                     </div>
                   </div>

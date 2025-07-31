@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
-import { validateSpamProtectionToken } from '@/lib/spam-protection';
+import { validateSpamProtectionToken } from "@/lib/spam-protection";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -25,21 +25,26 @@ export async function POST(request: NextRequest) {
     // Validate the request body
     const validatedData = emailSchema.parse(body);
 
-    const { name, email, phone, reason, date, message, spamToken, website } = validatedData;
+    const { name, email, phone, reason, date, message, spamToken, website } =
+      validatedData;
 
     // Get client IP for spam protection validation
-    const forwarded = request.headers.get('x-forwarded-for');
-    const clientIP = forwarded ? forwarded.split(',')[0] : 
-                     request.headers.get('x-real-ip') || 
-                     'unknown';
-    
+    const forwarded = request.headers.get("x-forwarded-for");
+    const clientIP = forwarded
+      ? forwarded.split(",")[0]
+      : request.headers.get("x-real-ip") || "unknown";
+
     // Validate spam protection
-    const spamCheck = validateSpamProtectionToken(spamToken, website || '', clientIP);
+    const spamCheck = validateSpamProtectionToken(
+      spamToken,
+      website || "",
+      clientIP,
+    );
     if (!spamCheck.valid) {
-      console.log('Spam protection triggered:', spamCheck.error);
+      console.log("Spam protection triggered:", spamCheck.error);
       return NextResponse.json(
-        { error: 'Security validation failed' },
-        { status: 400 }
+        { error: "Security validation failed" },
+        { status: 400 },
       );
     }
 
@@ -143,4 +148,3 @@ Timestamp: ${new Date().toLocaleString("en-NZ")}
     );
   }
 }
-

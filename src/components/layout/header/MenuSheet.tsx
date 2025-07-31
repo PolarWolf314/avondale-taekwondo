@@ -4,7 +4,6 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -29,22 +28,44 @@ const MenuSheet = () => {
         </SheetHeader>
         <div className="gap-4 pt-10 flex flex-col items-center">
           <SheetClose asChild>
-            <Link href="/" prefetch={true} className="w-full flex justify-center">
-              <Button variant="link" className="w-full">Home</Button>
+            <Link
+              href="/"
+              prefetch={true}
+              className="w-full flex justify-center"
+            >
+              <Button variant="link" className="w-full">
+                Home
+              </Button>
             </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Link href="/about" prefetch={true} className="w-full flex justify-center">
-              <Button variant="link" className="w-full">About</Button>
+            <Link
+              href="/about"
+              prefetch={true}
+              className="w-full flex justify-center"
+            >
+              <Button variant="link" className="w-full">
+                About
+              </Button>
             </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Link href="/pricing" prefetch={true} className="w-full flex justify-center">
-              <Button variant="link" className="w-full">Pricing and FAQ</Button>
+            <Link
+              href="/pricing"
+              prefetch={true}
+              className="w-full flex justify-center"
+            >
+              <Button variant="link" className="w-full">
+                Pricing and FAQ
+              </Button>
             </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Link href="/join" prefetch={true} className="w-full flex justify-center">
+            <Link
+              href="/join"
+              prefetch={true}
+              className="w-full flex justify-center"
+            >
               <Button className="w-full max-w-xs">Enquire</Button>
             </Link>
           </SheetClose>

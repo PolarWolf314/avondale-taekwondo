@@ -7,22 +7,30 @@ const ExpandedLinks = () => {
     <ul className="flex flex-row md:gap-3">
       <li>
         <Button variant="link" asChild>
-          <Link href="/" prefetch={true}>Home</Link>
+          <Link href="/" prefetch={true}>
+            Home
+          </Link>
         </Button>
       </li>
       <li>
         <Button variant="link" asChild>
-          <Link href="/about" prefetch={true}>About</Link>
+          <Link href="/about" prefetch={true}>
+            About
+          </Link>
         </Button>
       </li>
       <li>
         <Button variant="link" asChild>
-          <Link href="/pricing" prefetch={true}>Pricing & FAQ</Link>
+          <Link href="/pricing" prefetch={true}>
+            Pricing & FAQ
+          </Link>
         </Button>
       </li>
       <li>
         <Button asChild>
-          <Link href="/join" prefetch={true}>Enquire</Link>
+          <Link href="/join" prefetch={true}>
+            Enquire
+          </Link>
         </Button>
       </li>
     </ul>

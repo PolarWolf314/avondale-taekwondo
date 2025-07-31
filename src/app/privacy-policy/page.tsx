@@ -45,9 +45,10 @@ export default function PrivacyPolicy() {
                     Privacy-First Approach
                   </h3>
                   <p className="text-green-700">
-                    We believe in minimal data collection. We don&apos;t use cookies,
-                    don&apos;t track your browsing, and only collect information when
-                    you voluntarily contact us through our enquiry form.
+                    We believe in minimal data collection. We don&apos;t use
+                    cookies, don&apos;t track your browsing, and only collect
+                    information when you voluntarily contact us through our
+                    enquiry form.
                   </p>
                 </div>
               </div>
@@ -93,8 +94,8 @@ export default function PrivacyPolicy() {
                     website usage
                   </li>
                   <li>
-                    <strong>No personal profiles</strong> - We don&apos;t build user
-                    profiles
+                    <strong>No personal profiles</strong> - We don&apos;t build
+                    user profiles
                   </li>
                   <li>
                     <strong>No third-party tracking</strong> - No analytics or
@@ -288,4 +289,3 @@ export default function PrivacyPolicy() {
     </div>
   );
 }
-

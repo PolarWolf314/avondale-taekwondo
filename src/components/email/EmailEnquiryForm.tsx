@@ -48,7 +48,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 
-const nzPhoneRegex = /^(\+64|0)[1-9]\d{7,9}$/;
+const nzPhoneRegex = /^(\+64\s?|0)\s?[1-9][\d\s]{7,10}$/;
 
 export const enquirySchema = z.object({
   name: z

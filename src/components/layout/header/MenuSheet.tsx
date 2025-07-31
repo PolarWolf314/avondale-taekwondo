@@ -17,7 +17,9 @@ const MenuSheet = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Menu />
+        <button className="p-2 hover:bg-gray-300 rounded-md transition-colors">
+          <Menu />
+        </button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
@@ -27,24 +29,24 @@ const MenuSheet = () => {
         </SheetHeader>
         <SheetFooter className="gap-4 pt-10">
           <SheetClose asChild>
-            <Button asChild className="mx-24">
-              <Link href="/join">Enquire</Link>
-            </Button>
+            <Link href="/join" prefetch={true}>
+              <Button className="mx-24">Enquire</Button>
+            </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Button asChild variant="link">
-              <Link href="/pricing">Pricing and FAQ</Link>
-            </Button>
+            <Link href="/pricing" prefetch={true}>
+              <Button variant="link">Pricing and FAQ</Button>
+            </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Button asChild variant="link">
-              <Link href="/about">About</Link>
-            </Button>
+            <Link href="/about" prefetch={true}>
+              <Button variant="link">About</Button>
+            </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Button asChild variant="link">
-              <Link href="/">Home</Link>
-            </Button>
+            <Link href="/" prefetch={true}>
+              <Button variant="link">Home</Button>
+            </Link>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

@@ -6,23 +6,23 @@ const ExpandedLinks = () => {
   return (
     <ul className="flex flex-row md:gap-3">
       <li>
-        <Button variant="link">
-          <Link href="/">Home</Link>
+        <Button variant="link" asChild>
+          <Link href="/" prefetch={true}>Home</Link>
         </Button>
       </li>
       <li>
-        <Button variant="link">
-          <Link href="/about">About</Link>
+        <Button variant="link" asChild>
+          <Link href="/about" prefetch={true}>About</Link>
         </Button>
       </li>
       <li>
-        <Button variant="link">
-          <Link href="/pricing">Pricing & FAQ</Link>
+        <Button variant="link" asChild>
+          <Link href="/pricing" prefetch={true}>Pricing & FAQ</Link>
         </Button>
       </li>
       <li>
-        <Button>
-          <Link href="/join">Enquire</Link>
+        <Button asChild>
+          <Link href="/join" prefetch={true}>Enquire</Link>
         </Button>
       </li>
     </ul>
